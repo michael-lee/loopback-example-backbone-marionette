@@ -1,0 +1,36 @@
+module.exports = function(app) {
+  app.dataSources.mysqldb.automigrate('Todo', function(err) {
+    if (err) throw err;
+
+    app.models.Todo.create([
+      {title: 'Buy soy milk', completed: false, created: Date.now()},
+    ], function(err, Todos) {
+      if (err) throw err;
+
+      console.log('Todo created: \n', Todos);
+    });
+  });
+  app.dataSources.mysqldb.automigrate('User', function(err) {
+    if (err) throw err;
+
+    app.models.User.create([
+      {username: 'admin', email: 'admin@email.local', password: 'password'},
+    ], function(err, Users) {
+      if (err) throw err;
+
+      console.log('User created: \n', Users);
+    });
+  });
+  app.dataSources.mysqldb.automigrate('AccessToken', function(err) {
+    if (err) throw err;
+  });
+  app.dataSources.mysqldb.automigrate('ACL', function(err) {
+    if (err) throw err;
+  });
+  app.dataSources.mysqldb.automigrate('RoleMapping', function(err) {
+    if (err) throw err;
+  });
+  app.dataSources.mysqldb.automigrate('Role', function(err) {
+    if (err) throw err;
+  });
+};
