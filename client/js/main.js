@@ -1,24 +1,24 @@
 require.config({
     paths: {
-		'underscore': '../bower_components/underscore/underscore',
-		'backbone': '../bower_components/backbone/backbone',
-		'marionette': '../bower_components/backbone.marionette/lib/backbone.marionette',
-		'jquery': '../bower_components/jquery/dist/jquery',
+        'underscore': '../bower_components/underscore/underscore',
+        'backbone': '../bower_components/backbone/backbone',
+        'marionette': '../bower_components/backbone.marionette/lib/backbone.marionette',
+        'jquery': '../bower_components/jquery/dist/jquery',
         'bootstrap': '../bower_components/bootstrap/dist/js/bootstrap',
         'text': '../bower_components/text/text',
         'jquery.cookie': '../bower_components/jquery.cookie/jquery.cookie',
         'parsley': '../lib/parsley/parsley',
         'tpl': '../lib/tpl/tpl'
-	},
-	shim: {
-		'underscore': {
+    },
+    shim: {
+        'underscore': {
             exports: '_'
         },
-		'backbone': {
+        'backbone': {
             deps: ['underscore', 'jquery'],
             exports: 'Backbone'
         },
-		'marionette': {
+        'marionette': {
             deps: ['backbone'],
             exports: 'Backbone.Marionette'
         },
@@ -32,18 +32,18 @@ require.config({
         'jquery.cookie': {
             deps: ['jquery']
         }
-	},
-	deps: ['jquery', 'underscore']
+    },
+    deps: ['jquery', 'underscore']
 });
 
 require([
-	'app',
-	'backbone',
-	'routers/MainAppRouter',
-	'controllers/MainController',
+    'app',
+    'backbone',
+    'Router',
+    'RouterController',
     'jquery.cookie'
-], function (app, Backbone, Router, Controller) {
-	'use strict';
+], function (app, Backbone, Router, RouterController) {
+    'use strict';
 
     $.ajaxSetup({
         cache: false,
@@ -62,9 +62,7 @@ require([
     app.session.checkAuth({
         complete: function() {
             app.start();
-
-            new Router({ controller: Controller });
-
+            new Router({ controller: RouterController });
             Backbone.history.start();
         }
     });

@@ -1,15 +1,15 @@
 define(function (require) {
-	'use strict';
+    'use strict';
 
-	return {
-        navbarItemView: require('text!templates/navbarItemView.tmpl'),
-        loginPageItemView: require('text!templates/loginPageItemView.tmpl'),
-		todoItemView: require('tpl!templates/todoItemView.tmpl'),
-        todoAppLayoutView: require('tpl!templates/todoAppLayoutView.tmpl'),
-		todosCompositeView: require('tpl!templates/todoListCompositeView.tmpl'),
-		footerLayoutView: require('tpl!templates/footerLayoutView.tmpl'),
-		headerItemView: require('tpl!templates/headerItemView.tmpl'),
-        infoItemView: require('tpl!templates/infoItemView.tmpl'),
-        aboutItemView: require('tpl!templates/aboutItemView.tmpl')
-	};
+    return {
+        loginPageItemView: require('text!../templates/loginPageItemView.tpl'),
+        navbarItemView: require('text!../templates/navbarItemView.tpl'),
+        todosLayoutView: require('tpl!../templates/todosLayoutView.tpl'),
+        aboutItemView: require('tpl!../templates/aboutItemView.tpl'),
+        headerItemView: require('tpl!../templates/headerItemView.tpl'),
+        todosCompositeView: require('tpl!../templates/todoListCompositeView.tpl'),
+        todoItemView: require('tpl!../templates/todoItemView.tpl'),
+        footerLayoutView: require('tpl!../templates/footerLayoutView.tpl'),
+        infoItemView: require('tpl!../templates/infoItemView.tpl')
+    };
 });

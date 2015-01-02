@@ -2,85 +2,85 @@
 #todoapp.filter-completed #todo-list .active,
 #main,
 #footer {
-	display : none;
+    display : none;
 }
 
 .navbar-header {
-  width: 100%;
+    width: 100%;
 }
 
 .navbar-brand {
-  font-size: 25px;
-  font-weight: bold;
-  color: #b3b3b3;
-  color: rgba(255, 255, 255, 0.3);
-  text-shadow: -1px -1px rgba(0, 0, 0, 0.2);
+    font-size: 25px;
+    font-weight: bold;
+    color: #b3b3b3;
+    color: rgba(255, 255, 255, 0.3);
+    text-shadow: -1px -1px rgba(0, 0, 0, 0.2);
 }
 
 body {
-  background: #ffffff;
+    background: #ffffff;
 }
 
 #headerlinks {
-  margin: 16px auto 0;
-  color: #a6a6a6;
-  font-size: 18px;
-  font-weight: bold;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
-  text-align: center;
+    margin: 16px auto 0;
+    color: #a6a6a6;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+    text-align: center;
 }
 
 #headerlinks a {
-  color: inherit;
-  text-decoration: none;
-  padding-left: 30px;
+    color: inherit;
+    text-decoration: none;
+    padding-left: 30px;
 }
 
 #todoapp h1 {
-  top: -90px;
-  font-size: 60px;
+    top: -90px;
+    font-size: 60px;
 }
 
 #maincontent {
-  margin-top: 75px;
+    margin-top: 75px;
 }
 
 #maincontent h2 {
-  font-size: 40px;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 25px;
-  color: #b3b3b3;
-  color: rgba(255, 255, 255, 0.3);
-  text-shadow: -1px -1px rgba(0, 0, 0, 0.2);
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #b3b3b3;
+    color: rgba(255, 255, 255, 0.3);
+    text-shadow: -1px -1px rgba(0, 0, 0, 0.2);
 }
 
 #info {
-  position: relative;
-  font-size: 14px;
+    position: relative;
+    font-size: 14px;
 }
 
 #about {
-  margin-top: 135px;
-  color: #a6a6a6;
-  font-size: 14px;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
-  text-align: center;
+    margin-top: 135px;
+    color: #a6a6a6;
+    font-size: 14px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+    text-align: center;
 }
 
 #about a {
-  color: inherit;
+    color: inherit;
 }
 
 #about h1 {
-  position: absolute;
-  top: 40px;
-  width: 100%;
-  left: 0px;
-  font-size: 60px;
-  font-weight: bold;
-  text-align: center;
-  color: #b3b3b3;
-  color: rgba(255, 255, 255, 0.3);
-  text-shadow: -1px -1px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    left: 0px;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    color: #b3b3b3;
+    color: rgba(255, 255, 255, 0.3);
+    text-shadow: -1px -1px rgba(0, 0, 0, 0.2);
 }
