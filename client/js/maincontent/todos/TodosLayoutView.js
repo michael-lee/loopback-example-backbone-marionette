@@ -60,7 +60,6 @@ define([
             }
             if (this.ui.todoapp) {
                 this.ui.todoapp.attr('class', 'filter-' + (filter === '' ? 'all' : filter));
-                console.log('updateFilter todoapp: ', this.ui.todoapp);
             }
         },
 
