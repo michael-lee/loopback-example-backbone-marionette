@@ -1,12 +1,12 @@
 define([
     'marionette',
-    'templates',
+    'Templates',
     'maincontent/todos/todoapp/main/TodoItemView'
-], function (Marionette, templates, TodoItemView) {
+], function (Marionette, Templates, TodoItemView) {
     'use strict';
 
     return Marionette.CompositeView.extend({
-        template: templates.todosCompositeView,
+        template: Templates.todosCompositeView,
 
         childView: TodoItemView,
 
@@ -20,26 +20,26 @@ define([
             'click #toggle-all': 'onToggleAllClick'
         },
 
-        initialize: function () {
+        initialize: function() {
             this.listenTo(this.collection, 'all', this.updateToggleCheckbox, this);
         },
 
-        onRender: function () {
+        onRender: function() {
             this.updateToggleCheckbox();
         },
 
-        updateToggleCheckbox: function () {
-            var allCompleted = this.collection.reduce(function (lastModel, thisModel) {
+        updateToggleCheckbox: function() {
+            var allCompleted = this.collection.reduce(function(lastModel, thisModel) {
                 return lastModel && thisModel.get('completed');
             }, true);
 
             this.ui.toggle.prop('checked', allCompleted);
         },
 
-        onToggleAllClick: function (event) {
+        onToggleAllClick: function(event) {
             var isChecked = event.currentTarget.checked;
 
-            this.collection.each(function (todo) {
+            this.collection.each(function(todo) {
                 todo.save({ completed: isChecked });
             });
         }

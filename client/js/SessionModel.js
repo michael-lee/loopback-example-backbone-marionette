@@ -85,8 +85,8 @@ define([
                 success: function(res) {
                     if ('login' === opts.method) {
                         self.user.set({ id: res.userId });
-                        $.cookie('user_id', res.userId);
-                        $.cookie('access_token', res.id);
+                        $.cookie('user_id', res.userId, { expires: 30 });
+                        $.cookie('access_token', res.id, { expires: 30 });
                         self.setupAjax(res.id);
                         self.user.url = '/api/Users/' + res.userId;
                         self.user.fetch({ async: false });
@@ -100,8 +100,8 @@ define([
                             data: JSON.stringify({ username: res.username, password: postData.password }),
                             success: function(token) {
                                 self.user.set({ id: token.userId });
-                                $.cookie('user_id', token.userId);
-                                $.cookie('access_token', token.id);
+                                $.cookie('user_id', token.userId, { expires: 30 });
+                                $.cookie('access_token', token.id, { expires: 30 });
                                 self.setupAjax(token.id);
                                 self.user.url = '/api/Users/' + token.userId;
                                 self.user.fetch({ async: false });

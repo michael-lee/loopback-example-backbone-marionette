@@ -1,8 +1,8 @@
 define([
     'marionette',
-    'templates',
+    'Templates',
     'parsley'
-], function (Marionette, templates) {
+], function (Marionette, Templates) {
     'use strict';
 
     var ENTER_KEY = 13;
@@ -15,7 +15,7 @@ define([
         },
 
         template: function(sessionModel) {
-            return _.template(templates.loginPageItemView)({
+            return _.template(Templates.loginPageItemView)({
                 user: sessionModel.user
             });
         },

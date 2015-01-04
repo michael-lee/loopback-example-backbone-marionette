@@ -10,13 +10,13 @@ define([
             created: 0
         },
 
-        initialize: function () {
+        initialize: function() {
             if (this.isNew()) {
                 this.set('created', Date.now());
             }
         },
 
-        toggle: function () {
+        toggle: function() {
             return this.set('completed', !this.get('completed'));
         }
     });

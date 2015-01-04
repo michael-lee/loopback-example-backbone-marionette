@@ -53,7 +53,7 @@ require([
             'Authorization': $.cookie('access_token') || ''
         },
         statusCode: {
-            401: function () {
+            401: function() {
                 window.location.replace('#/login');
             }
         }

@@ -3,18 +3,18 @@ define([
     'use strict';
 
     return {
-        setFilter: function (param) {
+        setTodosFilter: function(param) {
             var filter = param && param.trim() !== 'todos' && param.trim() || '';
             window.app.vent.trigger('todoList:filter', filter);
         },
 
-        showLoginView: function () {
+        showLoginView: function() {
             window.app.session.resetSession();
-            window.app.vent.trigger('loginNeeded');
+            window.app.vent.trigger('login:show');
         },
 
-        showAboutView: function () {
-            window.app.vent.trigger('aboutNeeded');
+        showAboutView: function() {
+            window.app.vent.trigger('about:show');
         }
     };
 });

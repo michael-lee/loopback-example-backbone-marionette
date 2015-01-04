@@ -9,11 +9,11 @@ define([
 
         model: TodoModel,
 
-        getCompleted: function () {
+        getCompleted: function() {
             return this.where({completed: true});
         },
 
-        getActive: function () {
+        getActive: function() {
             return this.where({completed: false});
         },
 

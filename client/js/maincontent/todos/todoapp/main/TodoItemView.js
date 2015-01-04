@@ -1,7 +1,7 @@
 define([
     'marionette',
-    'templates'
-], function (Marionette, templates) {
+    'Templates'
+], function (Marionette, Templates) {
     'use strict';
 
     var ENTER_KEY = 13;
@@ -10,7 +10,7 @@ define([
     return Marionette.ItemView.extend({
         tagName: 'li',
 
-        template: templates.todoItemView,
+        template: Templates.todoItemView,
 
         value: '',
 
@@ -26,37 +26,37 @@ define([
             'blur .edit': 'onEditBlur'
         },
 
-        initialize: function () {
+        initialize: function() {
             this.value = this.model.get('title');
 
             this.listenTo(this.model, 'change', this.render, this);
         },
 
-        onRender: function () {
+        onRender: function() {
             this.$el
                 .removeClass('active completed')
                 .addClass(this.model.get('completed') ? 'completed' : 'active');
         },
 
-        onDestroyClick: function () {
+        onDestroyClick: function() {
             this.model.destroy();
         },
 
-        onToggleClick: function () {
+        onToggleClick: function() {
             this.model.toggle().save();
         },
 
-        toggleEditingMode: function () {
+        toggleEditingMode: function() {
             this.$el.toggleClass('editing');
         },
 
-        onEditDblclick: function () {
+        onEditDblclick: function() {
             this.toggleEditingMode();
 
             this.ui.edit.focus().val(this.value);
         },
 
-        onEditKeyDown: function (event) {
+        onEditKeyDown: function(event) {
             if (event.which === ENTER_KEY) {
                 this.ui.edit.trigger('blur');
             }
@@ -67,7 +67,7 @@ define([
             }
         },
 
-        onEditBlur: function (event) {
+        onEditBlur: function(event) {
             this.value = event.target.value.trim();
 
             if (this.value) {

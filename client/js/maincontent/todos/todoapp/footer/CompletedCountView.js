@@ -5,11 +5,11 @@ define([
     'use strict';
 
     return Marionette.View.extend({
-        initialize: function () {
+        initialize: function() {
             this.listenTo(this.collection, 'all', this.render, this);
         },
 
-        render: function () {
+        render: function() {
             this.$el = $('#clear-completed');
 
             var completedTodos = this.collection.getCompleted();

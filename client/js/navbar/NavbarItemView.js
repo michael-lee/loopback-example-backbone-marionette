@@ -1,9 +1,9 @@
 define([
     'backbone',
     'marionette',
-    'templates',
+    'Templates',
     'bootstrap'
-], function (Backbone, Marionette, templates) {
+], function (Backbone, Marionette, Templates) {
     'use strict';
 
     return Marionette.ItemView.extend({
@@ -15,7 +15,7 @@ define([
         },
 
         template: function(sessionModel) {
-            return _.template(templates.navbarItemView)({
+            return _.template(Templates.navbarItemView)({
                 logged_in: sessionModel.logged_in,
                 user: sessionModel.user
             });

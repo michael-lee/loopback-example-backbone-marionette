@@ -1,10 +1,10 @@
 define([
     'marionette',
-    'templates'
-], function (Marionette, templates) {
+    'Templates'
+], function (Marionette, Templates) {
     'use strict';
 
     return Marionette.ItemView.extend({
-        template: templates.aboutItemView
+        template: Templates.aboutItemView
     });
 });

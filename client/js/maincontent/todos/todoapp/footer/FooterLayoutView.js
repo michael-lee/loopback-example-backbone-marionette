@@ -1,13 +1,13 @@
 define([
     'marionette',
-    'templates',
+    'Templates',
     'maincontent/todos/todoapp/footer/ActiveCountView',
     'maincontent/todos/todoapp/footer/CompletedCountView'
-], function (Marionette, templates, ActiveCountView, CompletedCountView) {
+], function (Marionette, Templates, ActiveCountView, CompletedCountView) {
     'use strict';
 
     return Marionette.LayoutView.extend({
-        template: templates.footerLayoutView,
+        template: Templates.footerLayoutView,
 
         regions: {
             activeCount: '#todo-count',
@@ -22,20 +22,20 @@ define([
             'click #clear-completed' : 'onClearClick'
         },
 
-        onRender: function () {
+        onRender: function() {
             this.activeCount.show(new ActiveCountView({ collection: this.collection }));
             this.completedCount.show(new CompletedCountView({ collection: this.collection }));
         },
 
-        updateFilterSelection: function (filter) {
+        updateFilterSelection: function(filter) {
             this.ui.filters
                 .removeClass('selected')
                 .filter('[href="#/' + filter + '"]')
                 .addClass('selected');
         },
 
-        onClearClick: function () {
-            window.app.vent.trigger('todoList:clear:completed');
+        onClearClick: function() {
+            window.app.vent.trigger('todoList:clear:completed', this.collection);
         }
     });
 });

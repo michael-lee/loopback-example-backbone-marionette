@@ -7,7 +7,7 @@ define([
         appRoutes: {
             'login': 'showLoginView',
             'about': 'showAboutView',
-            '*filter': 'setFilter'
+            '*filter': 'setTodosFilter'
         }
     });
 });
