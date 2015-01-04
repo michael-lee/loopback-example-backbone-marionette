@@ -31,6 +31,11 @@ define([
         app.maincontent.show(app.loginPageItemView);
     };
 
+    app.showAboutPage = function() {
+        app.aboutPageItemView = new AboutItemView();
+        app.maincontent.show(app.aboutPageItemView);
+    };
+
     app.showMainContent = function() {
         if (app.session.get('logged_in') === true) {
             app.todosLayoutView = new TodosLayoutView();
@@ -57,11 +62,9 @@ define([
 
     app.vent.on('login:show', app.showLoginPage);
 
-    app.vent.on('about:show', function() {
-        app.maincontent.show(new AboutItemView());
-    });
+    app.vent.on('about:show', app.showAboutPage);
 
-    app.vent.on('todoList:filter', function(filter) {
+    app.vent.on('todos:filter', function(filter) {
         app.showMainContent();
         if (app.todosLayoutView) {
             app.todosLayoutView.updateFilter(filter);

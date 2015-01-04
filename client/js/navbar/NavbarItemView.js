@@ -29,7 +29,7 @@ define([
         onLoginStatusChange: function(event) {
             this.render();
             if (window.app.session.get('logged_in') === false) {
-                window.app.vent.trigger('loginNeeded');
+                window.app.vent.trigger('login:show');
             }
         },
 

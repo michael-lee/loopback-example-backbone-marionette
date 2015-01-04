@@ -27,6 +27,8 @@ define([
         },
 
         onBeforeShow: function() {
+            var self = this;
+
             this.todoList = new TodoListCollection();
             this.todoList.fetch();
 
@@ -38,6 +40,9 @@ define([
 
             this.footerLayoutView = new FooterLayoutView({ collection: this.todoList });
             this.getRegion('footer').show(this.footerLayoutView);
+            this.footerLayoutView.on('clear:completed', function(){
+                self.triggerMethod('childView:clear:completed');
+            });
 
             this.infoItemView = new InfoItemView();
             this.getRegion('info').show(this.infoItemView);
@@ -45,7 +50,6 @@ define([
 
         onDomRefresh: function() {
             this.listenTo(this.todoList, 'all', this.updateLayout);
-            window.app.vent.on('todoList:clear:completed', this.clearCompleted);
         },
 
         updateLayout: function() {
@@ -63,8 +67,8 @@ define([
             }
         },
 
-        clearCompleted: function(todoList) {
-            todoList.getCompleted().forEach(function(todo) {
+        onChildViewClearCompleted: function() {
+            this.todoList.getCompleted().forEach(function(todo) {
                 todo.destroy();
             });
         }

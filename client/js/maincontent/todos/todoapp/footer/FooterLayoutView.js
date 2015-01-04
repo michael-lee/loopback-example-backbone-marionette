@@ -18,8 +18,8 @@ define([
             filters: '#filters a'
         },
 
-        events: {
-            'click #clear-completed' : 'onClearClick'
+        triggers: {
+            'click #clear-completed' : 'clear:completed'
         },
 
         onRender: function() {
@@ -32,10 +32,6 @@ define([
                 .removeClass('selected')
                 .filter('[href="#/' + filter + '"]')
                 .addClass('selected');
-        },
-
-        onClearClick: function() {
-            window.app.vent.trigger('todoList:clear:completed', this.collection);
         }
     });
 });
