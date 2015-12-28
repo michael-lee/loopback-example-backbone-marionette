@@ -84,3 +84,8 @@ body {
     color: rgba(255, 255, 255, 0.3);
     text-shadow: -1px -1px rgba(0, 0, 0, 0.2);
 }
+
+.btn-primary {
+  background: #937777;
+  color: #ffffff;
+}

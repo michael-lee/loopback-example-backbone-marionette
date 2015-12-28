@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div id="login-alert" class="alert alert-success navbar-button" style="display:none;"></div>
-                    <a href="#" id="login-btn" class="btn btn-primary btn-lg" data-bypass>Login</a>
+                    <a href="#" id="login-btn" class="btn btn-primary" data-bypass>Login</a>
                 </fieldset>
             </form>
         </div>
@@ -60,7 +60,7 @@
                         </div>
                     </div>
                     <div id="signup-alert" class="alert alert-success navbar-button" style="display:none;"></div>
-                    <a href="#" id="signup-btn" class="btn btn-primary btn-lg" data-bypass>Sign Up</a>
+                    <a href="#" id="signup-btn" class="btn btn-primary" data-bypass>Sign Up</a>
                 </fieldset>
             </form>
         </div>

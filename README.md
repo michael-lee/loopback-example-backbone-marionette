@@ -21,6 +21,7 @@ npm install
 slc run
 ```
 
+Or, execute ```gulp``` to see the example in development mode with reload capability.
+
 #License
-Copyright (c) 2015 Michael Lee
 [MIT License](https://opensource.org/licenses/MIT)
