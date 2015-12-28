@@ -20,3 +20,7 @@ cd loopback-example-backbone-marionette
 npm install
 slc run
 ```
+
+#License
+Copyright (c) 2015 Michael Lee
+[MIT License](https://opensource.org/licenses/MIT)
