@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var nodemon = require('gulp-nodemon');
+var testServer = require('karma').Server;
 var BROWSER_SYNC_LOAD_DELAY = 1000;
 
 gulp.task('default', ['nodemon'], function () {
@@ -34,4 +35,17 @@ gulp.task('nodemon', function (cb) {
             });
         }, BROWSER_SYNC_LOAD_DELAY);
     });
+});
+
+gulp.task('test', function (done) {
+    return new testServer({
+        configFile: __dirname + '/karma.conf.js',
+        singleRun: true
+    }, done).start();
+});
+
+gulp.task('tdd', function (done) {
+    new Server({
+       configFile: __dirname + '/karma.conf.js',
+    }, done).start();
 });
